@@ -1,0 +1,72 @@
+ 
+<?php 
+include '../config/function.php';
+include '../config/userdata.php';
+include '../config/sessionData.php';
+//include '../config/checkifadmin.php';
+if(!isset($_SESSION['username']))
+{
+header("location:../index");
+}  
+?>
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home at Nokarin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<?php include '../css/style.php'; ?>
+</head>
+<body>
+
+<?php include 'header.php'; ?>
+
+
+<div class="container">
+  <h2>Update Info</h2>
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="focusedInput">Focused</label>
+      <input class="form-control" id="focusedInput" type="text">
+    </div>
+
+  </form>
+</div>
+
+  <!-- Footer -->
+
+<?php include 'footer.php'; ?> 	
+  <!-- End page content -->
+
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+</body>
+</html>
