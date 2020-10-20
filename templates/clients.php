@@ -249,6 +249,8 @@ $(document).ready(function(){
 				success:function(data)
 				{
 					$('#user_data').find("tr:gt(0)").remove();
+					// $('#action_alert').html('<p>Client Inserted Successfully</p>');
+					// $('#action_alert').dialog('open');
 					window.location.reload();
 				}
 			})

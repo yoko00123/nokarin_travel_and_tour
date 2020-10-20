@@ -66,7 +66,7 @@ div.container {
 <h4 style="color:gray;">Update Info</h4>
   <hr>
   <div class="container">
-  <form action="" method="post">
+  <form action="" method="post" enctype="multipart/form-data">
     <input type="hidden" name="ID_User" value="<?php echo $ID; ?>">
     <label for="uname">Name</label>
     <input type="text" id="uname" name="uname" value="<?php echo $Name; ?>" placeholder="">
@@ -76,6 +76,9 @@ div.container {
 	
 	<label for="Contact">Contact Number</label>
     <input type="text" id="Contact" name="Contact" value="<?php echo $ContactNumber; ?>" placeholder="">
+	
+	<label for="profilepic">Profile Pic</label>
+    <input type="file" id="profilepic" name="profilepic" value="<?php echo $profilepic; ?>">
 	
 	<label for="Username">Username</label>
     <input type="text" id="Username" name="Username" value="" placeholder="<?php echo $username; ?>">

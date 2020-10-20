@@ -44,7 +44,7 @@ if($ID_UserType == 3){
 <form method="post" style="width:400px; box-shadow: 10px 10px 5px grey;" enctype="multipart/form-data">
   <div class="container">
   
-  <h6 style="text-align:center; color:green;">Welcome <span id="opname"></span> to Nokarin Travel and Tours!</h6>
+  <h6 style="text-align:center; color:green;">Welcome <span id="opname">set</span> to Nokarin Travel and Tours!</h6>
     <hr>
     <input type="hidden" name="nameop" id="nameop">
 	

@@ -1,5 +1,6 @@
 <?php 
 include '../config/function.php';
+include '../config/userdata.php';
 include '../config/sessionData.php';
 if(!isset($_SESSION['username']))
 {

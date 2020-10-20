@@ -193,7 +193,7 @@ span.price {
 			<label for="estnumbofpass"><b>Estimate Number of Passenger</b></label>
             <input type="number" placeholder="Estimate Number" name="estnumbofpass" required>
 			
-			<label for="Projectn"><b>Project Name</b></label>
+			<!--<label for="Projectn"><b>Project Name</b></label>
             <input type="text" placeholder="Project Name" name="Projectn" required>
 			
 			<label for="workforce"><b>Work Force</b></label>
@@ -204,7 +204,16 @@ span.price {
 			
 			<label for="chargecode"><b>Charge Code</b></label>
             <input type="text" placeholder="Charge Code" name="chargecode" required>
-		
+			
+			<label for="servicedate"><b>Service Date</b></label>
+			<input type="date" id="servicedate" name="servicedate">
+			
+			<label for="odometerin"><b>Odometer In</b></label>
+			<input type="number" id="odometerin" name="odometerin">
+			
+			<label for="odometerout"><b>Odometer Out</b></label>
+			<input type="number" id="odometerout" name="odometerout">
+             -->
 			
             <label for="fname"><i class="fa fa-user"></i> Driver</label>
             <select id="drivern" name="drivern" >

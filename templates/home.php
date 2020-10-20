@@ -18,17 +18,104 @@ header("location:../index");
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <?php include '../css/style.php'; ?>
+
 </head>
 <body>
 
 <?php include 'header.php'; ?>
 
-
-
-<!-- !PAGE CONTENT! -->
+<!-- !PAGE CONTENT! 
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
-
+-->
   <!-- Header -->
+  <!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:10px">    
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+	
+	<!-- Profile -->
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+         <h6 class="w3-center">Hi, <?php echo ucfirst($username); ?></h6>
+         <p class="w3-center"><img src="/nokarin/templates/profilepic/<?php if($image !=''){ echo $image; }else { echo 'default.jpg'; } ?>" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <hr>
+         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> <?php echo $usertype; ?></p>
+         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> <?php echo $Address; ?></p>
+        </div>
+      </div>
+      <br>
+      
+      <!-- Accordion -->
+      <div class="w3-card w3-round">
+        <div class="w3-white">
+          <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Statistic</button>
+     
+          <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Schedule</button>
+          <?php if ($ID_UserTypeLatest == 3){ ?>
+          <a style="text-decoration:none;" href="mydriver">
+		  <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Drivers</button>
+		  </a>
+          <?php } ?>
+        </div>      
+      </div>
+      <br>
+      
+      <!-- Interests --> 
+      <div class="w3-card w3-round w3-white w3-hide-small">
+        <div class="w3-container">
+          <p>Route</p>
+          <p>
+            <span class="w3-tag w3-small w3-theme-d5">Accenture Boni-SM North</span>
+           
+          </p>
+        </div>
+      </div>
+      <br>
+	</div>
+  <div class="w3-col m7">
+  
+   <div class="w3-row-padding">
+        <div class="w3-col m12">
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container w3-padding">
+			<?php if($ID_UserTypeLatest == 5 || $ID_UserTypeLatest == 1){ ?>
+              <h6 class="w3-opacity">Send announcement to your clients and operators.</h6>
+			<?php }else if ($ID_UserTypeLatest == 3){ ?>
+			<h6 class="w3-opacity">Send announcement to your drivers.</h6>
+		
+			<?php }else if ($ID_UserTypeLatest == 7){ ?>
+			<h6 class="w3-opacity">Send announcement to your colleagues and operator.</h6>
+			<?php }else{} ?>
+		    <?php if($ID_UserTypeLatest != 2) { ?>
+			 <form method="post" enctype="multipart/form-data">
+             <input type="text" name="announcementcontent" class="w3-border w3-padding" style="width:100%; height:90px; background-color:#006E6D; color:white; font-weight:bold;">
+			  <?php if ($ID_UserTypeLatest == 3){ ?>
+			<select name="sendtodriver" id="sendtodriver">
+			<option value="0">All Drivers</option>
+			<?php mydrivers(); ?>
+			</select>
+			  <?php } ?>
+              <button type="submit" name="sendannouncement" class="w3-button w3-theme"><i class="fa fa-pencil">
+			  </i>Post</button> 
+			  </form>
+			<?php } ?>
+			  <?php
+               if(isset($_POST['sendannouncement']))
+               {
+               send_announcement();
+               }
+			  ?>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+  <?php if($ID_UserTypeLatest == 5 || $ID_UserTypeLatest == 1){ ?>
+  
+  
   <header class="w3-container" style="padding-top:22px">
     <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
   </header>
@@ -75,7 +162,8 @@ header("location:../index");
       </div>
     </div>
   </div>
-
+  <?php }  ?>
+  <?php check_announcement(); ?>
   <div class="w3-panel">
     <div class="w3-row-padding" style="margin:0 -16px">
       <!--<div class="w3-third">
@@ -125,6 +213,7 @@ header("location:../index");
       </div>
     </div>
   </div>
+  <?php if($ID_UserTypeLatest == 5 || $ID_UserTypeLatest == 1){ ?>
   <hr>
   <div class="w3-container">
     <h5>General Stats</h5>
@@ -143,6 +232,7 @@ header("location:../index");
       <div class="w3-container w3-center w3-padding w3-blue" style="width:75%">75%</div>
     </div>
   </div>
+  <?php } ?>
   <hr>
 
   <div class="w3-container">
@@ -248,7 +338,9 @@ header("location:../index");
     </div>
   </div>
 -->
+</div>
   <!-- Footer -->
+  </div>
 
 <?php include 'footer.php'; ?> 	
   <!-- End page content -->
@@ -280,6 +372,6 @@ function w3_close() {
 sessionStorage.removeItem('Username');
 
 </script>
-
+</div>
 </body>
 </html>

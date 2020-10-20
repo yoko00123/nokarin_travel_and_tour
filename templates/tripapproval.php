@@ -92,7 +92,16 @@ trip_approval($IsActive, $isexpired);
 
 </div>
 <script>
+/*
+function IsActive() {
+	var x =  document.getElementById("IsActive").checked;
+	if(x == true){
 
+	}else{
+
+	}
+}
+*/
 var checkbox = document.querySelector("input[name=IsActive]");
 
 checkbox.addEventListener( 'change', function() {
@@ -112,7 +121,18 @@ checkbox2.addEventListener( 'change', function() {
         	document.getElementById("isexpired").value = 0;	
     }
 });
-
+/*
+function isexpired() {
+  
+  	var x =  document.getElementById("isexpired").checked;
+	if(x == true){
+  document.getElementById("isexpired").value = 1;
+	}else{
+	document.getElementById("isexpired").value = 0;	
+	}
+  
+}
+*/
 </script>
 
 <?php include 'footer.php'; ?>

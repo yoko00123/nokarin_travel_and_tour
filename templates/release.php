@@ -1,6 +1,7 @@
 <?php 
 include '../config/function.php';
 include '../config/sessionData.php';
+include '../config/userdata.php';
 if(!isset($_SESSION['username']))
 {
 header("location:../index");

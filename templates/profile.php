@@ -25,71 +25,55 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 
 <!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:10px">    
 
   <!-- The Grid -->
-  <div class="w3-row-padding">
+  <div class="w3-row">
   
-    <!-- Left Column -->
-    <div class="w3-third">
-    
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-          <img src="https://bayosel.com/nokarin/nokarinlogo.ico" style="width:250px; height:250px" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black"><br><br><br>
-            <h2><?php echo $Name; ?></h2>
-          </div>
-        </div>
+    <div class="w3-col m3">
+	
+	<!-- Profile -->
+      <div class="w3-card w3-round w3-white">
         <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>-</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $Address; ?></p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>-</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $ContactNumber; ?></p>
-          <hr>
-         
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <p>Adobe Photoshop</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
-          </div>
-          <p>Photography</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-              <div class="w3-center w3-text-white">80%</div>
-            </div>
-          </div>
-          <p>Illustrator</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
-          </div>
-          <p>Media</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-          </div>
-          <br>
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-          <p>English</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
-          </div>
-          <p>Spanish</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
-          </div>
-          <p>German</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
-          </div>
-          <br>
+         <h4 class="w3-center">Hi, <?php echo $username; ?></h4>
+         <p class="w3-center"><img src="/nokarin/templates/profilepic/<?php  if($image !=''){ echo $image; }else { echo 'default.jpg'; } ?>" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <hr>
+         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> <?php echo $usertype; ?></p>
+         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> <?php echo $Address; ?></p>
         </div>
-      </div><br>
-    
-    <!-- End Left Column -->
-    </div>
+      </div>
+      <br>
+      
+      <!-- Accordion -->
+      <div class="w3-card w3-round">
+        <div class="w3-white">
+          <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Statistic</button>
+       
+          <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Schedule</button>
+          <?php if ($ID_UserTypeLatest == 3){ ?>
+          <button class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Drivers</button>
+		  <?php } ?>
+		
+        </div>      
+      </div>
+      <br>
+      
+      <!-- Interests --> 
+      <div class="w3-card w3-round w3-white w3-hide-small">
+        <div class="w3-container">
+          <p>Route</p>
+          <p>
+            <span class="w3-tag w3-small w3-theme-d5">Accenture Boni-SM North</span>
+           
+          </p>
+        </div>
+      </div>
+      <br>
+	</div>
 
     <!-- Right Column -->
-    <div class="w3-twothird">
+	 <?php if ($ID_UserTypeLatest == 3){ ?>
+    <div class="w3-twothird" style="margin-left:10px;">
     
       <div class="w3-container w3-card w3-white w3-margin-bottom">
         <!--<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Files</h2>-->
@@ -142,7 +126,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
     <!-- End Right Column -->
     </div>
-    
+	 <?php } ?>
   <!-- End Grid -->
   </div>
   

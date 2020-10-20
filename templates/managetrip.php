@@ -21,9 +21,10 @@ header("location:../index");
 <?php include 'header.php'; ?>
 
 <div class="w3-bar w3-black">
-    <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'London')">Active Trip Tickets</button>
-    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Paris')">Expired Trip Tickets</button>
+    <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'London')">Assign Trip Tickets</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Used Trip Tickets</button>
+   <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Paris')">Expired Trip Tickets</button>
+    
   </div>
   
   <div id="London" class="w3-container w3-border city">

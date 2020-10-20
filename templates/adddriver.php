@@ -152,7 +152,6 @@ $(document).ready(function(){
 			$('#first_name').css('border-color', '');
 			first_name = $('#first_name').val();
 		}	
-		
 		if($('#last_name').val() == '')
 		{
 			error_last_name = 'Last Name is required';

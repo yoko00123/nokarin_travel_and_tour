@@ -17,11 +17,6 @@ header("location:../index");
 <?php include '../css/style.php'; ?>
 
 
-</head>
-<body>
-
-<?php include 'header.php'; ?>
-
 <style>
 * {box-sizing: border-box}
 body {font-family: Verdana, sans-serif; margin:0}
@@ -99,6 +94,9 @@ q {font-style: italic;}
 </style>
 </head>
 <body>
+
+<?php include 'header.php'; ?>
+
 
 <div class="slideshow-container">
 
